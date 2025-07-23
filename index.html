@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>New Punjab School & College</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0d0d0d;
+      --brown: #3e2f2f;
+      --gold: #d4af37;
+      --white: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    header.scrolled {
+      background-color: var(--brown);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    nav h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 28px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1588072432836-e10032774350') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: var(--gold);
+      text-shadow: 2px 2px #000;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .services, .mood-picker, .testimonials {
+      margin-top: 40px;
+    }
+
+    .service-item {
+      background-color: var(--brown);
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .service-item button {
+      background-color: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .testimonial {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-left: 5px solid var(--gold);
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: var(--brown);
+      text-align: center;
+      padding: 20px;
+      color: var(--white);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="navbar">
+    <nav>
+      <h1>New Punjab School</h1>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#mood">Mood Picker</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Step to Your Future</h2>
+  </div>
+
+  <section id="mood" class="mood-picker">
+    <h3>Student Mood Picker</h3>
+    <p>Select your learning style to get matched with the perfect teacher:</p>
+    <ul>
+      <li>🎧 Audio Learner → Suggest: Mr. Imran</li>
+      <li>📖 Reading Learner → Suggest: Miss Sana</li>
+      <li>🧩 Visual Learner → Suggest: Sir Bilal</li>
+    </ul>
+  </section>
+
+  <section id="services" class="services">
+    <h3>Premium Services</h3>
+
+    <div class="service-item">
+      <span>Premium Home Tuition – PKR 6,500</span>
+      <button onclick="order('Premium Home Tuition')">Order</button>
+    </div>
+
+    <div class="service-item">
+      <span>Elite Group Sessions – PKR 5,000</span>
+      <button onclick="order('Elite Group Sessions')">Order</button>
+    </div>
+
+    <div class="service-item">
+      <span>Exam Mastery Program – PKR 8,000</span>
+      <button onclick="order('Exam Mastery Program')">Order</button>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h3>Student Wall</h3>
+
+    <div class="testimonial">
+      <p>"Best learning environment! Loved the Exam Mastery Program!" — Ayesha R.</p>
+    </div>
+    <div class="testimonial">
+      <p>"Home tuition was so personalized. I topped my board exams!" — Hamza K.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Contact Us</h3>
+    <p><strong>Address:</strong> Cavalry Street 6, Lahore</p>
+    <p><strong>Phone:</strong> +923010600547</p>
+    <p><strong>Order on WhatsApp:</strong> <a href="https://wa.me/923010600547" style="color: var(--gold);">Click Here</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 New Punjab School & College. All rights reserved.
+  </footer>
+
+  <script>
+    // Scroll navbar background change
+    window.addEventListener('scroll', function () {
+      const header = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // WhatsApp Order Button
+    function order(serviceName) {
+      const phone = "923010600547";
+      const message = `Hello, I'm interested in ordering the '${serviceName}' from New Punjab School.`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
